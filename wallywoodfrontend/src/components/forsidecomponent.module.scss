@@ -1,0 +1,85 @@
+.forside-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 14px;
+  font-family: "Arial, sans-serif";
+}
+
+.forside-helt {
+  background: #f5f5f5;
+  padding: 46px 24px;
+  border-radius: 14px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 14px;
+  color: #222;
+}
+
+p {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 24px;
+}
+
+button {
+  background: #222;
+  color: #fff;
+  border: none;
+  padding: 14px 32px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+
+  &:hover {
+    background: #444;
+  }
+}
+
+.forside-kategorier {
+  margin-top: 48px;
+
+  h2 {
+    font-size: 1.7rem;
+    margin-bottom: 24px;
+    color: #222;
+  }
+
+  .kategori-list {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .kategori-kort {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+    padding: 24px;
+    flex: 1 1 220px;
+    min-width: 220px;
+    text-align: center;
+
+    .kategori-icon {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 16px;
+      background: #eee;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #333;
+      margin: 0;
+    }
+  }
+}
