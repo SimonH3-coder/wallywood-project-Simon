@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import curtainImage from "../../assets/images/curtain.jpg";
 import { Title } from "../../components/Title/Title";
+import { Poster } from "../../components/Poster/Poster";
 import style from "./home.module.scss";
 import type { MovieData } from "../../types/MovieType";
-import parse from "html-react-parser";
+import { Grid } from "../../components/Grid/Grid";
 
 export function Home() {
   const [movieData, setMovieData] = useState<Array<MovieData>>();
@@ -18,18 +19,12 @@ export function Home() {
     <>
       <img className={style.homePageImage} src={curtainImage} alt="curtain_image"></img>
       <Title text={"Sidste nyt..."} />
-
-      {movieData &&
-        movieData.map((item) => {
-          return (
-            <div key={item.id} className={style.movieCard}>
-              <img width="200" src={item.image} className={style.movieImage}></img>
-              <h4 className={style.movieTitle}>{item.name}</h4>
-              <div className={style.movieDescription}>{parse(item.description)}</div>
-              <button className={style.readMoreButton}>Læs mere</button>
-            </div>
-          );
-        })}
+      <Grid gtc={2} gap={32}>
+        {movieData &&
+          movieData.map((item) => {
+            return <Poster genres={item.genres} title={item.name} imageUrl={item.image} description={item.description} id={item.id} />;
+          })}
+      </Grid>
     </>
   );
 }

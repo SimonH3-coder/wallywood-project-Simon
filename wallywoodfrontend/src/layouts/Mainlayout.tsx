@@ -1,13 +1,14 @@
 import { Outlet } from "react-router";
 import { Navbar } from "../components/Navbar/Navbar";
 import style from "./Main.Layout.module.scss";
+import { Footer } from "../components/Footer/Footer";
 
 export function Mainlayout() {
   const links = [
     { name: "home", path: "/" },
-    { name: "about", path: "/about" },
-    { name: "posters", path: "/posters" },
-    { name: "contact", path: "/contact" },
+    { name: "plakater", path: "/poster" },
+    { name: "om os", path: "/about" },
+    { name: "kontakt", path: "/contact" },
     { name: "login", path: "/login" },
   ];
 
@@ -15,7 +16,7 @@ export function Mainlayout() {
     <section className={style.pageContainer}>
       <Navbar logoNav="WALLYWOOD" linkNav={links} />
       <Outlet />
-      <footer>Footer</footer>
+      <Footer />
     </section>
   );
 }

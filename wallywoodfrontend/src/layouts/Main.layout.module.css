@@ -1,12 +1,10 @@
-@use "../styles/globals" as globals;
-
 .pageContainer {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   gap: 8px;
-  background-color: globals.$color_bg_white;
+  background-color: #f9f9f9;
   max-width: 1366px;
   margin: auto;
   padding: 0 10vh 0 10vh;
-}
+}/*# sourceMappingURL=Main.layout.module.css.map */
