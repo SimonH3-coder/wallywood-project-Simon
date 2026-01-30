@@ -2,7 +2,7 @@ import style from "./Grid.module.scss";
 
 interface GridProps {
   gtr?: number;
-  gtc?: number;
+  gtc?: string;
   gap?: number;
   children: React.ReactNode;
 }
