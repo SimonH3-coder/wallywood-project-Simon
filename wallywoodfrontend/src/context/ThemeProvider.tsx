@@ -3,7 +3,11 @@ import { ThemeProvider } from "../context/ThemeContext";
 
 function App() {
   // ...existing code...
-  return <ThemeProvider>{/* ...resten af din app... */}</ThemeProvider>;
+  return (
+    <ThemeProvider>
+      <App />
+    </ThemeProvider>
+  );
 }
 
 export default App;

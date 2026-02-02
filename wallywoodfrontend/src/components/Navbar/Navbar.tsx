@@ -14,9 +14,6 @@ export function Navbar(props: NavbarProps) {
   const { userData, logout } = useContext(AuthContext);
   const { darkMode, toggleTheme } = useContext(ThemeContext);
 
-  useEffect(() => {
-    document.body.className = darkMode ? style.dark : style.light;
-  }, [darkMode]);
   return (
     <nav className={style.navbarStyle}>
       <h3>{logoNav}</h3>
