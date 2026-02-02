@@ -1,11 +1,11 @@
-import { Poster } from '../../components/Poster/Poster';
+import { Poster } from "../../components/Poster/Poster.tsx";
 import { Grid } from "../../components/Grid/Grid";
 import { useFetch } from "../../hooks/useFetch";
 import { useState } from "react";
 import type { MovieData } from "../../types/MovieType";
 import { Genreselect } from "../../components/Genreselect/Genreselect";
-import { Title } from '../../components/Title/Title';
-import { Dropdown} from '../../components/Dropdown/Dropdown';
+import { Title } from "../../components/Title/Title";
+import { Dropdown } from "../../components/Dropdown/Dropdown";
 
 export function Posters() {
   const [selectedGenre, setSelectedGenre] = useState<string>("komedie");
@@ -24,14 +24,12 @@ export function Posters() {
 
   // Hvis selectedSort er 'arc'eller 'desc' så sæt sort_direction til at være selectedSort (arc/desc)
   // Og sæt sort_Key til 'price'
-  if ( selectedSort === 'asc' || selectedSort === 'desc') {
+  if (selectedSort === "asc" || selectedSort === "desc") {
     sort_Direction = selectedSort;
-  } else {
-    sort_Key = 'price';
+    sort_Key = "price";
   }
-  }
-  const { data, isLoading, error } = useFetch<Array<MovieData>>(
-    `http://localhost:3000/posters/list_by_genre/${selectedGenre}?sort_key=${sort_Key}&sort_direction=${sort_Direction}`,);
+
+  const { data, isLoading, error } = useFetch<Array<MovieData>>(`http://localhost:3000/posters/list_by_genre/${selectedGenre}?sort_key=${sort_Key}&sort_direction=${sort_Direction}`);
 
   if (isLoading) {
     return <h1>Loading data......</h1>;
@@ -50,9 +48,8 @@ export function Posters() {
         <Genreselect setSelectedGenre={setSelectedGenre} />
 
         <Grid gtc={"1fr 1fr 1fr"} gap={32}>
-          {data?.map((item, index) => {
-            return <Poster key={index} imageUrl={item.image} id={item.id} genres={item.genres} title={item.name} />
-          )
+          {data?.map((item) => {
+            return <Poster key={item.id} price={item.price} imageUrl={item.image} id={item.id} genres={item.genres} title={item.name} />;
           })}
         </Grid>
       </Grid>

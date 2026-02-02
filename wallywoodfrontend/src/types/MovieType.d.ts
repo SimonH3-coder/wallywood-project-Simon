@@ -4,7 +4,7 @@ export interface MovieData {
   description: string;
   image: string;
   genres: Genre[];
-  price?: number;
+  price: number;
 }
 
 export interface Genre {
