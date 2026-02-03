@@ -24,7 +24,7 @@ export function Home() {
       <Grid gtc="1fr 1fr" gap={32}>
         {data &&
           data.map((item) => {
-            return <Poster genres={item.genres} title={item.name} imageUrl={item.image} description={item.description} id={item.id} price={item.price} />;
+            return <Poster key={item.id} genres={item.genres} title={item.name} imageUrl={item.image} description={item.description} id={item.id} price={item.price} />;
           })}
       </Grid>
     </>

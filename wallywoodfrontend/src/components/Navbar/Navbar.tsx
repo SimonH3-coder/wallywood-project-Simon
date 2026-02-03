@@ -1,6 +1,6 @@
 import { NavLink } from "react-router";
 import style from "./Navbar.module.scss";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { ThemeContext } from "../../context/ThemeContext";
 
@@ -15,7 +15,7 @@ export function Navbar(props: NavbarProps) {
   const { darkMode, toggleTheme } = useContext(ThemeContext);
 
   return (
-    <nav className={style.navbarStyle}>
+    <nav className={style.navbarStyle + " " + (darkMode ? style.dark : style.light)}>
       <h3>{logoNav}</h3>
       <ul>
         {linkNav.map((item) => {

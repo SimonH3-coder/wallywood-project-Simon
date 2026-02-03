@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import type { UserData } from "../types/Usertype";
+import type { UserData } from "../types/userType.d.ts";
 import { AuthContext } from "./AuthContext";
 
 // TS -interface til Provideren

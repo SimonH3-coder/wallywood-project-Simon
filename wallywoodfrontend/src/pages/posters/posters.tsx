@@ -31,6 +31,8 @@ export function Posters() {
 
   const { data, isLoading, error } = useFetch<Array<MovieData>>(`http://localhost:3000/posters/list_by_genre/${selectedGenre}?sort_key=${sort_Key}&sort_direction=${sort_Direction}`);
 
+  console.log("data", data);
+
   if (isLoading) {
     return <h1>Loading data......</h1>;
   }
@@ -49,7 +51,7 @@ export function Posters() {
 
         <Grid gtc={"1fr 1fr 1fr"} gap={32}>
           {data?.map((item) => {
-            return <Poster key={item.id} price={item.price} imageUrl={item.image} id={item.id} genres={item.genres} title={item.name} />;
+            return <Poster slug={item.slug} key={item.id} price={item.price} imageUrl={item.image} id={item.id} genres={item.genres} title={item.name} />;
           })}
         </Grid>
       </Grid>

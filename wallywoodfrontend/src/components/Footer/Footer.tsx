@@ -1,4 +1,4 @@
-import style from "./footer.module.scss";
+import style from "./Footer.module.scss";
 // import { RiFacebookBoxFill } from "react-icons/ri";
 // import { FaInstagram } from "react-icons/fa6";
 // import { FaSquareTwitter } from "react-icons/fa6";
@@ -14,7 +14,7 @@ export function Footer() {
         </div>
         <div>
           <p>CVR: 123512512</p>
-          <p>Mail: inf@plakatshoppen.dk</p>
+          <p>Mail: info@plakatshoppen.dk</p>
           <p>Mobil: +45 1232 2323</p>
         </div>
       </section>
